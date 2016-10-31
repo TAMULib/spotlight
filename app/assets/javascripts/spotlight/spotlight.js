@@ -15,13 +15,10 @@ Spotlight = function() {
 
 Blacklight.onLoad(function() {
   Spotlight.activate();
-  //$(".openseadragon-container").find("picture:not([id])").openseadragon();
-  console.log("Blacklight load");
 });
 
 Spotlight.onLoad(function(){
   SpotlightNestable.init();
   $(".openseadragon-container").find("picture:not([id])").openseadragon();
-  console.log("Spotlight load");
 });
 
