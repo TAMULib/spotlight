@@ -19,5 +19,10 @@ Blacklight.onLoad(function() {
 
 Spotlight.onLoad(function(){
   SpotlightNestable.init();
+
+  $(".carousel-control").on("click", function(e) {
+    e.preventDefault();
+  });
+
 });
 
