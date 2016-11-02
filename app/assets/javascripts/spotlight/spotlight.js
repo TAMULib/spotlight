@@ -24,5 +24,7 @@ Spotlight.onLoad(function(){
     e.preventDefault();
   });
 
+  $(".openseadragon-container").find("picture:not([id])").openseadragon();
+  
 });
 
