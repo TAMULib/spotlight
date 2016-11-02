@@ -19,5 +19,6 @@ Blacklight.onLoad(function() {
 
 Spotlight.onLoad(function(){
   SpotlightNestable.init();
+  $(".openseadragon-container").find("picture:not([id])").openseadragon();
 });
 
