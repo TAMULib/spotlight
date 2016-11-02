@@ -16,6 +16,7 @@
 //= require sir-trevor
 //= require nestable
 //= require parameterize
+//= require tamu/tamu-spotlight
 //= require spotlight/spotlight
 //= require bootstrap/tab
 //= require bootstrap/tooltip
