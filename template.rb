@@ -7,7 +7,8 @@ spotlight_options = ENV.fetch('SPOTLIGHT_INSTALL_OPTIONS', DEFAULT_SPOTLIGHT_OPT
 
 # Add gem dependencies to the application
 gem 'blacklight', ' ~> 6.0'
-gem 'blacklight-spotlight', ENV['SPOTLIGHT_GEM'] ? { path: ENV['SPOTLIGHT_GEM'] } : { github: 'TAMULib/spotlight', branch: 'sprint1-staging' }
+gem 'openseadragon', { github: 'TAMULib/openseadragon-rails', branch: 'tamu-openseadragon-rails' } 
+gem 'blacklight-spotlight', ENV['SPOTLIGHT_GEM'] ? { path: ENV['SPOTLIGHT_GEM'] } : { github: 'TAMULib/spotlight', branch: 'tamu-spotlight' }
 
 Bundler.with_clean_env do
   run 'bundle install'
