@@ -19,7 +19,7 @@ module Spotlight
       def to_openseadragon(*_args)
         self[Spotlight::Engine.config.full_image_field].each_with_index.map do |image_url, index|
           { LegacyImagePyramidTileSource.new(
-            image_url,
+            "#{ENV["RAILS_RELATIVE_URL_ROOT"]}#{image_url}",
             width: self[:spotlight_full_image_width_ssm][index],
             height: self[:spotlight_full_image_height_ssm][index]
           ) => {} }

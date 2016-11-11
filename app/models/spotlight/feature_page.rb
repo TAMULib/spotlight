@@ -20,7 +20,7 @@ module Spotlight
     end
 
     def thumbnail_image_url
-      thumbnail.image.thumb.url if thumbnail && thumbnail.image
+      "#{ENV["RAILS_RELATIVE_URL_ROOT"]}#{thumbnail.image.thumb.url}" if thumbnail && thumbnail.image
     end
   end
 end
