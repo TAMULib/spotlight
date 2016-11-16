@@ -14,7 +14,7 @@ TamuSpotlight = function() {
 }();
 
 Blacklight.onLoad(function() {
-  TamuSpotlight.activate(); 
+  TamuSpotlight.activate();
 });
 
 // A fix for slideshow advances that initiate a page reload
@@ -27,5 +27,5 @@ TamuSpotlight.onLoad(function() {
 
 // A fix for onpenseadragon images that do not get initialized on navigation.
 TamuSpotlight.onLoad(function() {
-   $(".openseadragon-container").find("picture:not([id])").openseadragon();
+   //$(".openseadragon-container").find("picture:not([id])").openseadragon();
 });
