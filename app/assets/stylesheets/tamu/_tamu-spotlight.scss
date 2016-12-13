@@ -1,166 +1,131 @@
 /* line 6, /usr/local/rvm/gems/ruby-2.3.0/gems/blacklight-6.5.0/app/assets/stylesheets/blacklight/_header.scss */
 
-body{margin-bottom:0;}
-
 #header-navbar .navbar-brand {
-  /* The main logo image for the Blacklight instance */
-  width: 297px;
-  height: 25px;
-  background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
-  display: inline-block;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  padding-right: 0;
-  margin-right: 20px;
-  padding-left: 0;
+	/* The main logo image for the Blacklight instance */
+	width: 297px;
+	height: 25px;
+	background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
+	display: inline-block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-right: 0;
+	margin-right: 20px;
+	padding-left: 0;
 
 }
 
 .navbar-header{
-  padding-top:11px;
+	padding-top:11px;
 }
 
 .navbar-inverse {
-    background-color: #3c0000;
-    border-color: #500000;
+	background-color: #3c0000;
+	border-color: #500000;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color:#ededed;
+	color:#ededed;
 }
 
-    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #ffe8aa;
-    background-color: transparent;
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: #ffe8aa;
+	background-color: transparent;
 }
 
-#global-footer,
-#global-footer .container {
-  background:#4d4d4d;
-  color:#e3dfd5;
+#global-footer, #global-footer .container {
+	background:#4d4d4d;
+	color:#e3dfd5;
 }
 
-footer.tamu-footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 206px;
-}
 
 #tamu-footer-container {
-    background-color: #ededed;
-    border-top: 1px solid #a9a09a;
-    clear: both;
-   
-    padding: 0 !important;
-    position: relative;
+	background-color: #ededed;
+	/* border-top: 1px solid #a9a09a; */
+	/* clear: both; */
+	/* padding: 0 !important; */
+	/* position: relative; */
 }
-
-#tamu-footer {
-  height: 150px;
-  text-align:center;
-}
-
-
-#tamu-footer-img{
-  float: left;
-  padding:20px;
-}
-
 
 #tamu-footer-links li{
-  display: inline-block;
-  padding: 30px;
-  padding-right: 10px;
+	display: inline-block;
+	padding: 30px;
+	padding-right: 10px;
 }
 
 #tamu-footer-links li a{
-  color:#4d4d4d;
-  border-bottom: 1px dotted #8a887d;
-    text-decoration: none;
+	color:#4d4d4d;
+	border-bottom: 1px dotted #8a887d;
+	text-decoration: none;
 }
 
 #global-footer a {
-    color: #e3dfd5;
+	color: #e3dfd5;
 }
 
 #global-footer #copyright-complaint {
-    font-size: 12px;
+	font-size: 12px;
 }
+
 #global-footer .container {
-    
-    text-align: center;
-
-padding: 30px 0;}
-
-
+	text-align: center;
+	padding: 30px 0;
+}
 
 #bottom-text li{
-  display: inline-block;
-  padding-right: 10px;
+	display: inline-block;
+	padding-right: 10px;
 }
 
 
 @media screen and (max-width: 991px) {
-  footer {
-    position:static;
-    bottom: 0;
-    width: 100%;
-    
-    
+	footer {
+		position:static;
+		bottom: 0;
+		width: 100%;
+	}
+
+	#tamu-footer-img {
+		text-align: center;
+	}
+
+	#tamu-footer{
+		width: 100%;
+		height: 200px;
+	}
+
+	#tamu-footer-links li {
+		display: block;
+		padding-right: 0;
+		text-align:center;
+	}
 }
 
-#tamu-footer-img {
-    text-align: center;
+#tamu-logo {
+	margin:20px;
 }
 
-#tamu-footer{
-  width: 100%;
-  height: 200px;
+#tamu-footer {
+	&>div:nth-child(1) {
+		background-color: #ededed;
+		border-top: 1px solid #a9a09a;
+	}
+	&>div:nth-child(2) {
+		background:#4d4d4d;
+		color:#e3dfd5;
+	}
 }
 
-#tamu-footer-links li {
-    display: block;
-    padding-right: 0;
-  text-align:center;}
-
-body{margin-bottom:0;}
-
-
+//CSS for centered, responsive, variable width Bootstrap columns
+.row-centered {
+    text-align:center;
 }
 
-
-@media screen and (min-width: 480px) {
-  #main-container{
-    min-height: 800px;
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
-}
-
-
-
-/*
-Sticky Footer Solution
-by Steve Hatcher 
-http://stever.ca
-http://www.cssstickyfooter.com
-*/
-
-html, body {
-  height: 100%;
-}
-#tamu-wrap {
-  min-height: 100%;
-}
-#tamu-content {
-  overflow:visible;
-  padding-bottom: 180px; /* must be same height as the footer */
-}
-#global-footer {
-  position: relative;
-  overflow: hidden;
-  margin-top: -120px; /* negative value of footer height */
-  height: 120px;
-  width: 100%;
-  clear:both;
-} 
