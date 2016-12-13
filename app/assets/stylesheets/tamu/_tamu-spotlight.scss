@@ -90,6 +90,36 @@ $lower-footer-height:85px;
 	}
 }
 
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//Sticky footer code (variable height!)
+//Source: https://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css
+
+html{
+	height:100%;
+}
+
+body {
+	display: table;
+	table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#tamu-sticky-content{
+	height:auto;
+}
+
+footer, #tamu-sticky-footer{
+	display: table-row;
+	height: 1px;
+}
+
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+
 #tamu-footer-upper{
 	background-color: #ededed;
 	border-top: 1px solid #a9a09a;
