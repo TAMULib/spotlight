@@ -56,10 +56,6 @@ $lower-footer-height:85px;
 	color: #e3dfd5;
 }
 
-#global-footer #copyright-complaint {
-	font-size: 12px;
-}
-
 #global-footer .container {
 	text-align: center;
 	padding: 30px 0;
@@ -116,9 +112,20 @@ $lower-footer-height:85px;
 
 #tamu-lower-footer-link-list {
 	text-align:center;
-	line-height:$lower-footer-height;
 	margin:0;
 }
+
+#lower-footer-link-row {
+	padding-top:20px;
+	padding-bottom:5px;
+}
+
+#copyright{
+	text-align:center;
+	font-size: 12px;
+}
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
 
 //CSS for centered, responsive, variable width Bootstrap columns
 //Use examples:
@@ -138,3 +145,6 @@ $lower-footer-height:85px;
     /* inline-block space fix */
     margin-right:-4px;
 }
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
