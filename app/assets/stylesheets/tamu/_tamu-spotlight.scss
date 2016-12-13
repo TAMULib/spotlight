@@ -38,15 +38,6 @@
 	color:#e3dfd5;
 }
 
-
-#tamu-footer-container {
-	background-color: #ededed;
-	/* border-top: 1px solid #a9a09a; */
-	/* clear: both; */
-	/* padding: 0 !important; */
-	/* position: relative; */
-}
-
 #tamu-footer-links li{
 	display: inline-block;
 	padding: 30px;
@@ -101,22 +92,26 @@
 	}
 }
 
+#tamu-footer-upper{
+	background-color: #ededed;
+	border-top: 1px solid #a9a09a;
+}
+
+#tamu-footer-lower{
+	background:#4d4d4d;
+	color:#e3dfd5;
+}
+
 #tamu-logo {
 	margin:20px;
 }
 
-#tamu-footer {
-	&>div:nth-child(1) {
-		background-color: #ededed;
-		border-top: 1px solid #a9a09a;
-	}
-	&>div:nth-child(2) {
-		background:#4d4d4d;
-		color:#e3dfd5;
-	}
-}
-
 //CSS for centered, responsive, variable width Bootstrap columns
+//Use examples:
+/* <div class="row row-centered"> */
+/* <div class="col-md-3 col-centered"> */
+//Credit: http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns
+
 .row-centered {
     text-align:center;
 }
