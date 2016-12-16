@@ -2,19 +2,16 @@
 
 $lower-footer-height:85px;
 
-#header-navbar .navbar-brand {
-	/* The main logo image for the Blacklight instance */
-	width: 297px;
-	height: 25px;
-	background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
-	display: inline-block;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	padding-right: 0;
-	margin-right: 20px;
-	padding-left: 0;
-
+.navbar-brand {
+	width:auto !important;
+	height:auto !important;
+	*{
+		color:white !important;
+		margin:0 !important;
+		text-indent:0;
+	}
+	// background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
+	background:none !important;
 }
 
 .navbar-header{
