@@ -1,10 +1,12 @@
 /* line 6, /usr/local/rvm/gems/ruby-2.3.0/gems/blacklight-6.5.0/app/assets/stylesheets/blacklight/_header.scss */
 
+@import "color";
+
 $lower-footer-height:85px;
 
 .navbar-brand {
 // 	width:100% !important;
-// 	height:auto !important;
+	height:auto !important;
 // 	margin:0 !important;
 // 	*{
 // 		color:white !important;
@@ -21,19 +23,17 @@ $lower-footer-height:85px;
 	width:4px;
 }
 
-.navbar-inverse {
-	background-color: #3c0000;
-	border-color: #500000;
+nav {
+	background-color: $maroon-light !important;
+	border-color: $maroon-dark !important;
+	border-radius:0px !important;
+	*{
+		color:$nav-text-default !important;
+	}
+	.active > a{
+		background-color:$maroon-dark !important;
+	}
 }
-
-.navbar-inverse .navbar-nav > li > a {
-	color:#ededed;
-}
-
-// .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-// 	color: #ffe8aa;
-// 	background-color: transparent;
-// }
 
 //----------------------------------------------------------------------------------
 //Sticky footer code (variable height!)
