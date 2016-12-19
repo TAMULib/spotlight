@@ -4,16 +4,6 @@
 
 $lower-footer-height:85px;
 
-.navbar-brand {
-// 	width:100% !important;
-	height:auto !important;
-// 	margin:0 !important;
-// 	*{
-// 		color:white !important;
-// 		margin:0 !important;
-// 	}
-}
-
 .navbar-header{
 	padding-top:11px;
 }
@@ -35,6 +25,18 @@ nav {
 	}
 }
 
+.navbar-brand{
+	padding-top:0;
+	padding-bottom:0;
+}
+
+#tamu-header-logo-svg {
+	width:50px;
+	height:50px;
+	margin:0;
+	padding:0;
+}
+
 //----------------------------------------------------------------------------------
 //Sticky footer code (variable height!)
 //Source: https://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css
@@ -53,12 +55,6 @@ body {
 
 #tamu-sticky-content{
 	height:auto;
-}
-
-#tamu-logo-header {
-	height:50px;
-	width:50px;
-	float:left;
 }
 
 footer, #tamu-sticky-footer{
