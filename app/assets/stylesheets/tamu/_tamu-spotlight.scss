@@ -3,24 +3,17 @@
 $lower-footer-height:85px;
 
 .navbar-brand {
-	width:100% !important;
-	height:auto !important;
-	margin:0 !important;
-	*{
-		color:white !important;
-		margin:0 !important;
-		text-indent:0;
-	}
-	// background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
-	background:none !important;
+// 	width:100% !important;
+// 	height:auto !important;
+// 	margin:0 !important;
+// 	*{
+// 		color:white !important;
+// 		margin:0 !important;
+// 	}
 }
 
 .navbar-header{
 	padding-top:11px;
-}
-
-#header-logo-label {
-	padding-top: 15px;
 }
 
 #header-logo-vertical-bar {
@@ -37,71 +30,15 @@ $lower-footer-height:85px;
 	color:#ededed;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-	color: #ffe8aa;
-	background-color: transparent;
-}
+// .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+// 	color: #ffe8aa;
+// 	background-color: transparent;
+// }
 
-#global-footer, #global-footer .container {
-	background:#4d4d4d;
-	color:#e3dfd5;
-}
-
-#tamu-footer-links li{
-	display: inline-block;
-	padding: 30px;
-	padding-right: 10px;
-}
-
-#tamu-footer-links li a{
-	color:#4d4d4d;
-	border-bottom: 1px dotted #8a887d;
-	text-decoration: none;
-}
-
-#global-footer a {
-	color: #e3dfd5;
-}
-
-#global-footer .container {
-	text-align: center;
-	padding: 30px 0;
-}
-
-#bottom-text li{
-	display: inline-block;
-	padding-right: 10px;
-}
-
-
-@media screen and (max-width: 991px) {
-	footer {
-		position:static;
-		bottom: 0;
-		width: 100%;
-	}
-
-	#tamu-footer-img {
-		text-align: center;
-	}
-
-	#tamu-footer{
-		width: 100%;
-		height: 200px;
-	}
-
-	#tamu-footer-links li {
-		display: block;
-		padding-right: 0;
-		text-align:center;
-	}
-}
-
-
-//----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 //Sticky footer code (variable height!)
 //Source: https://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css
+//----------------------------------------------------------------------------------
 
 html{
 	height:100%;
@@ -118,19 +55,17 @@ body {
 	height:auto;
 }
 
-footer, #tamu-sticky-footer{
-	display: table-row;
-	height: 1px;
-}
-
 #tamu-logo-header {
 	height:50px;
 	width:50px;
 	float:left;
 }
 
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
+footer, #tamu-sticky-footer{
+	display: table-row;
+	height: 1px;
+}
+
 
 #tamu-footer-upper{
 	background-color: #ededed;
@@ -166,6 +101,29 @@ footer, #tamu-sticky-footer{
 	text-align:center;
 	font-size: 12px;
 }
+
+@media screen and (max-width: 991px) {
+	footer {
+		position:static;
+		bottom: 0;
+		width: 100%;
+	}
+
+	#tamu-footer-img {
+		text-align: center;
+	}
+
+	#tamu-footer{
+		width: 100%;
+		height: 200px;
+	}
+
+	#tamu-footer-links li {
+		display: block;
+		padding-right: 0;
+		text-align:center;
+	}
+}
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 
@@ -195,5 +153,4 @@ footer, #tamu-sticky-footer{
 //Header formatting
 .navbar-header {
 	padding-top:0;
-	// min-width:400px;
 }
