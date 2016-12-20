@@ -1,168 +1,180 @@
 /* line 6, /usr/local/rvm/gems/ruby-2.3.0/gems/blacklight-6.5.0/app/assets/stylesheets/blacklight/_header.scss */
 
-body{margin-bottom:0;}
+$lower-footer-height:85px;
 
 #header-navbar .navbar-brand {
-  /* The main logo image for the Blacklight instance */
-  width: 297px;
-  height: 25px;
-  background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
-  display: inline-block;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  padding-right: 0;
-  margin-right: 20px;
-  padding-left: 0;
+	/* The main logo image for the Blacklight instance */
+	width: 297px;
+	height: 25px;
+	background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
+	display: inline-block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-right: 0;
+	margin-right: 20px;
+	padding-left: 0;
 
 }
 
 .navbar-header{
-  padding-top:11px;
+	padding-top:11px;
 }
 
 .navbar-inverse {
-    background-color: #3c0000;
-    border-color: #500000;
+	background-color: #3c0000;
+	border-color: #500000;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color:#ededed;
+	color:#ededed;
 }
 
-    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #ffe8aa;
-    background-color: transparent;
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: #ffe8aa;
+	background-color: transparent;
 }
 
-#global-footer,
-#global-footer .container {
-  background:#4d4d4d;
-  color:#e3dfd5;
-  box-shadow:inset 0 4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
+#global-footer, #global-footer .container {
+	background:#4d4d4d;
+	color:#e3dfd5;
 }
-
-footer.tamu-footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 206px;
-}
-
-#tamu-footer-container {
-    background-color: #ededed;
-    border-top: 1px solid #a9a09a;
-    box-shadow: 0 4px 8px -8px rgba(0,0,0,0.2) inset;
-    clear: both;
-   
-    padding: 0 !important;
-    position: relative;
-}
-
-#tamu-footer {
-  height: 150px;
-  text-align:center;
-}
-
-
-#tamu-footer-img{
-  float: left;
-  padding:20px;
-}
-
 
 #tamu-footer-links li{
-  display: inline-block;
-  padding: 30px;
-  padding-right: 10px;
+	display: inline-block;
+	padding: 30px;
+	padding-right: 10px;
 }
 
 #tamu-footer-links li a{
-  color:#4d4d4d;
-  border-bottom: 1px dotted #8a887d;
-    text-decoration: none;
+	color:#4d4d4d;
+	border-bottom: 1px dotted #8a887d;
+	text-decoration: none;
 }
 
 #global-footer a {
-    color: #e3dfd5;
+	color: #e3dfd5;
 }
 
-#global-footer #copyright-complaint {
-    font-size: 12px;
-}
 #global-footer .container {
-    
-    text-align: center;
-
-padding: 30px 0;}
-
-
+	text-align: center;
+	padding: 30px 0;
+}
 
 #bottom-text li{
-  display: inline-block;
-  padding-right: 10px;
+	display: inline-block;
+	padding-right: 10px;
 }
 
 
 @media screen and (max-width: 991px) {
-  footer {
-    position:static;
-    bottom: 0;
+	footer {
+		position:static;
+		bottom: 0;
+		width: 100%;
+	}
+
+	#tamu-footer-img {
+		text-align: center;
+	}
+
+	#tamu-footer{
+		width: 100%;
+		height: 200px;
+	}
+
+	#tamu-footer-links li {
+		display: block;
+		padding-right: 0;
+		text-align:center;
+	}
+}
+
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//Sticky footer code (variable height!)
+//Source: https://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css
+
+html{
+	height:100%;
+}
+
+body {
+	display: table;
+	table-layout: fixed;
+    height: 100%;
     width: 100%;
-    
-    
 }
 
-#tamu-footer-img {
-    text-align: center;
+#tamu-sticky-content{
+	height:auto;
 }
 
-#tamu-footer{
-  width: 100%;
-  height: 200px;
-}
-
-#tamu-footer-links li {
-    display: block;
-    padding-right: 0;
-  text-align:center;}
-
-body{margin-bottom:0;}
-
-
+footer, #tamu-sticky-footer{
+	display: table-row;
+	height: 1px;
 }
 
 
-@media screen and (min-width: 480px) {
-  #main-container{
-    min-height: 800px;
-}
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+
+#tamu-footer-upper{
+	background-color: #ededed;
+	border-top: 1px solid #a9a09a;
+	*{
+		color:#000000;
+	}
 }
 
-
-
-/*
-Sticky Footer Solution
-by Steve Hatcher 
-http://stever.ca
-http://www.cssstickyfooter.com
-*/
-
-html, body {
-  height: 100%;
+#tamu-footer-lower{
+	min-height:$lower-footer-height;
+	background:#4d4d4d;
+	*{
+		color:#e3dfd5;
+	}
 }
-#tamu-wrap {
-  min-height: 100%;
+
+#tamu-logo {
+	margin:20px;
 }
-#tamu-content {
-  overflow:visible;
-  padding-bottom: 180px; /* must be same height as the footer */
+
+#tamu-lower-footer-link-list {
+	text-align:center;
+	margin:0;
 }
-#global-footer {
-  position: relative;
-  overflow: hidden;
-  margin-top: -120px; /* negative value of footer height */
-  height: 120px;
-  width: 100%;
-  clear:both;
-} 
+
+#lower-footer-link-row {
+	padding-top:20px;
+	padding-bottom:5px;
+}
+
+#copyright{
+	text-align:center;
+	font-size: 12px;
+}
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+
+//CSS for centered, responsive, variable width Bootstrap columns
+//Use examples:
+/* <div class="row row-centered"> */
+/* <div class="col-md-3 col-centered"> */
+//Credit: http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
