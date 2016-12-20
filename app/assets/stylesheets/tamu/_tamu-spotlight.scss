@@ -1,100 +1,70 @@
 /* line 6, /usr/local/rvm/gems/ruby-2.3.0/gems/blacklight-6.5.0/app/assets/stylesheets/blacklight/_header.scss */
 
+@import "color";
+
 $lower-footer-height:85px;
-
-#header-navbar .navbar-brand {
-	/* The main logo image for the Blacklight instance */
-	width: 297px;
-	height: 25px;
-	background: transparent image_url('tamu/sm_logo.png') no-repeat top left !important;
-	display: inline-block;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	padding-right: 0;
-	margin-right: 20px;
-	padding-left: 0;
-
-}
 
 .navbar-header{
 	padding-top:11px;
 }
 
-.navbar-inverse {
-	background-color: #3c0000;
-	border-color: #500000;
+#header-logo-vertical-bar {
+	background-color:white;
+	width:4px;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-	color:#ededed;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-	color: #ffe8aa;
-	background-color: transparent;
-}
-
-#global-footer, #global-footer .container {
-	background:#4d4d4d;
-	color:#e3dfd5;
-}
-
-#tamu-footer-links li{
-	display: inline-block;
-	padding: 30px;
-	padding-right: 10px;
-}
-
-#tamu-footer-links li a{
-	color:#4d4d4d;
-	border-bottom: 1px dotted #8a887d;
-	text-decoration: none;
-}
-
-#global-footer a {
-	color: #e3dfd5;
-}
-
-#global-footer .container {
-	text-align: center;
-	padding: 30px 0;
-}
-
-#bottom-text li{
-	display: inline-block;
-	padding-right: 10px;
-}
-
-
-@media screen and (max-width: 991px) {
-	footer {
-		position:static;
-		bottom: 0;
-		width: 100%;
+nav {
+	background-color: $maroon-light !important;
+	border-color: $maroon-dark !important;
+	border-radius:0px !important;
+	*{
+		color:$nav-text-default !important;
 	}
-
-	#tamu-footer-img {
-		text-align: center;
-	}
-
-	#tamu-footer{
-		width: 100%;
-		height: 200px;
-	}
-
-	#tamu-footer-links li {
-		display: block;
-		padding-right: 0;
-		text-align:center;
+	.active > a, .open > a{
+		background-color:$maroon-dark !important;
 	}
 }
 
+.navbar-brand{
+	padding-top:0;
+	padding-bottom:0;
+}
 
-//----------------------------------------------------------------------------------
+.logo-text-section {
+	@media (max-width: 540px) {
+		display:none !important;
+		// background-color:blue !important;
+	}
+}
+
+#tamu-header-logo-svg {
+	width:50px;
+	height:50px;
+	margin:0;
+	padding:0;
+}
+
+#logo-container {
+	float:left;
+	width:60px;
+}
+
+#logo-spacer {
+	width:1px;
+	background-color:white;
+	height:34px;
+	margin-bottom:-12px;
+}
+
+#logo-text {
+	margin:0;
+	padding:0;
+}
+
 //----------------------------------------------------------------------------------
 //Sticky footer code (variable height!)
 //Source: https://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css
+//----------------------------------------------------------------------------------
 
 html{
 	height:100%;
@@ -117,9 +87,6 @@ footer, #tamu-sticky-footer{
 }
 
 
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
-
 #tamu-footer-upper{
 	background-color: #ededed;
 	border-top: 1px solid #a9a09a;
@@ -136,7 +103,7 @@ footer, #tamu-sticky-footer{
 	}
 }
 
-#tamu-logo {
+#tamu-logo-footer {
 	margin:20px;
 }
 
@@ -153,6 +120,29 @@ footer, #tamu-sticky-footer{
 #copyright{
 	text-align:center;
 	font-size: 12px;
+}
+
+@media screen and (max-width: 991px) {
+	footer {
+		position:static;
+		bottom: 0;
+		width: 100%;
+	}
+
+	#tamu-footer-img {
+		text-align: center;
+	}
+
+	#tamu-footer{
+		width: 100%;
+		height: 200px;
+	}
+
+	#tamu-footer-links li {
+		display: block;
+		padding-right: 0;
+		text-align:center;
+	}
 }
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
@@ -178,3 +168,9 @@ footer, #tamu-sticky-footer{
 
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
+
+
+//Header formatting
+.navbar-header {
+	padding-top:0;
+}
