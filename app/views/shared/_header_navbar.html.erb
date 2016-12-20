@@ -1,17 +1,26 @@
-<div id="header-navbar" class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+<nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse">
-      <span class="sr-only"><%= t :toggle_nav %></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to application_name, main_app.root_path, class: "navbar-brand" %>
-    </div>
-
-    <div class="collapse navbar-collapse" id="user-util-collapse">
-      <%= render :partial=>'/user_util_links' %>
-    </div>
-  </div>
-</div>
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="#">
+		<ul class="list-inline">
+		  <li>
+			<img id="tamu-header-logo-svg" src="/assets/tamu/TAM-Logo-white.svg"/>
+		  </li>
+		  <li class="logo-text-section"><div id="logo-spacer"></div></li>
+		  <li class="logo-text-section"><h3 id="logo-text">Texas A&M University Libraries</h3></li>
+		</ul>
+	  </a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+	  </ul>
+	  <%= render :partial=>'/user_util_links' %>
+	</div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>

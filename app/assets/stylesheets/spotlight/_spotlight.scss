@@ -2,13 +2,13 @@
 @import "spotlight/mixins";
 @import "bootstrap/variables";
 
-@import "spotlight/navbar";
+// @import "spotlight/navbar";
 @import "spotlight/sir-trevor_overrides";
 @import "spotlight/attachments";
 @import "spotlight/pages";
 @import 'blacklight_gallery/default';
 @import "spotlight/browse";
-@import "spotlight/header";
+// @import "spotlight/header";
 @import "spotlight/footer";
 @import "spotlight/catalog";
 @import "spotlight/croppable";
@@ -37,7 +37,4 @@
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  margin-bottom: $footer-height + $footer-top-margin;
 }
