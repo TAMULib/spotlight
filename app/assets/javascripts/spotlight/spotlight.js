@@ -20,4 +20,3 @@ Blacklight.onLoad(function() {
 Spotlight.onLoad(function(){
   SpotlightNestable.init();
 });
-
