@@ -20,6 +20,11 @@ nav {
 	*{
 		color:$nav-text-default !important;
 	}
+	@media(min-width:540px){
+		.dropdown-menu a {
+			color:black !important;
+		}
+	}
 	.active > a, .open > a{
 		background-color:$maroon-dark !important;
 	}
