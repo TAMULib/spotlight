@@ -31,6 +31,16 @@ module Spotlight
     after_index :completed!
     after_index :touch_exhibit!
 
+    after_destroy :cleanup_solr_record
+
+    def cleanup_solr_record
+     blacklight_solr.delete_by_id(document_ids, params: { softCommit: true })
+    end
+
+    def document_ids
+      document_builder.documents_to_index.to_a.map { |y| y[:id] }
+    end
+
     ##
     # Persist the record to the database, and trigger a reindex to solr
     #
