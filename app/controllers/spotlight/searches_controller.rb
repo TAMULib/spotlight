@@ -2,6 +2,7 @@ module Spotlight
   ##
   # CRUD actions for curating browse categories (see
   # {Spotlight::BrowseController} for the end-user read and index actions)
+  # rubocop:disable Metrics/ClassLength
   class SearchesController < Spotlight::ApplicationController
     load_resource :exhibit, class: 'Spotlight::Exhibit'
     before_action :authenticate_user!
@@ -99,8 +100,8 @@ module Spotlight
         :title,
         :long_description,
         :default_index_view_type,
-        masthead_attributes: featured_image_attributes,
-        thumbnail_attributes: featured_image_attributes
+        masthead_attributes: featured_image_params,
+        thumbnail_attributes: featured_image_params
       )
     end
 
@@ -108,8 +109,15 @@ module Spotlight
       params.to_unsafe_h.with_indifferent_access.except(:exhibit_id, :search, *blacklisted_search_session_params).reject { |_k, v| v.blank? }
     end
 
-    def featured_image_attributes
-      [:display, :source, :image, :remote_image_url, :document_global_id, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h]
+    def featured_image_params
+      [
+        :iiif_region, :iiif_tilesource,
+        :iiif_manifest_url, :iiif_canvas_id, :iiif_image_id,
+        :display,
+        :source,
+        :image,
+        :document_global_id
+      ]
     end
 
     def only_curators!
@@ -124,4 +132,5 @@ module Spotlight
       spotlight.exhibit_searches_path(current_exhibit)
     end
   end
+  # rubocop:enable Metrics/ClassLength
 end

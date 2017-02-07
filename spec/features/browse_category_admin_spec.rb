@@ -27,7 +27,10 @@ describe 'Browse Category Administration', type: :feature do
 
       within '#search-masthead' do
         choose 'Upload an image'
-        attach_file('search_masthead_attributes_image', File.absolute_path(File.join(FIXTURES_PATH, 'avatar.png')))
+        # attach_file('search_masthead_attributes_file', File.absolute_path(File.join(FIXTURES_PATH, 'avatar.png')))
+        # The JS fills in these fields:
+        find('#search_masthead_attributes_iiif_tilesource', visible: false).set 'http://test.host/images/7'
+        find('#search_masthead_attributes_iiif_region', visible: false).set '0,0,100,200'
       end
 
       click_button 'Save changes'
@@ -37,8 +40,7 @@ describe 'Browse Category Administration', type: :feature do
       search.reload
 
       expect(search.masthead).not_to be nil
-      expect(search.masthead.image.cropped).not_to be_nil
-      expect(search.masthead.image.path).to end_with 'avatar.png'
+      expect(search.masthead.iiif_url).to eq 'http://test.host/images/7/0,0,100,200/1800,180/0/default.jpg'
     end
 
     it 'attaches a thumbnail image' do
@@ -48,7 +50,7 @@ describe 'Browse Category Administration', type: :feature do
 
       within '#search-thumbnail' do
         choose 'Upload an image'
-        attach_file('search_thumbnail_attributes_image', File.absolute_path(File.join(FIXTURES_PATH, 'avatar.png')))
+        attach_file('search_thumbnail_attributes_file', File.absolute_path(File.join(FIXTURES_PATH, 'avatar.png')))
       end
 
       click_button 'Save changes'
@@ -58,8 +60,6 @@ describe 'Browse Category Administration', type: :feature do
       search.reload
 
       expect(search.thumbnail).not_to be nil
-      expect(search.thumbnail.image.thumb).not_to be_nil
-      expect(search.thumbnail.image.path).to end_with 'avatar.png'
     end
 
     it 'can select a default index view type' do

@@ -30,12 +30,13 @@ module Spotlight
 
     def featured_image_params
       [
+        :iiif_region, :iiif_tilesource,
+        :iiif_manifest_url, :iiif_canvas_id,
+        :iiif_image_id,
         :display,
         :source,
         :image,
-        :remote_image_url,
-        :document_global_id,
-        :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h
+        :document_global_id
       ]
     end
   end
