@@ -23,7 +23,7 @@ module Spotlight
     after_destroy :cleanup_solr_record
 
     def cleanup_solr_record
-     blacklight_solr.delete_by_id(document_ids, params: { softCommit: true })
+      blacklight_solr.delete_by_id(document_ids, params: { softCommit: true })
     end
 
     def document_ids
