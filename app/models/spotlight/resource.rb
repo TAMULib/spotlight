@@ -23,7 +23,12 @@ module Spotlight
     after_destroy :cleanup_solr_record
 
     def cleanup_solr_record
+      # Must be called before manual image delete or carrierwave raises
       blacklight_solr.delete_by_id(document_ids, params: { softCommit: true })
+
+      img_id = document_ids[0].gsub(/[[:digit:]]+-/, '')
+      path_to_delete = File.join(Rails.root, "/public/uploads/spotlight/featured_image/image/#{img_id}")
+      FileUtils.rm_rf(path_to_delete)
     end
 
     def document_ids
