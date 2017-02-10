@@ -20,12 +20,14 @@ module Spotlight
     after_index :commit
     after_index :touch_exhibit!
 
-    after_destroy :cleanup_solr_record
+    after_destroy :cleanup_solr_record, :cleanup_image_files
 
+    # Must be called before manual image delete or carrierwave raises
     def cleanup_solr_record
-      # Must be called before manual image delete or carrierwave raises
       blacklight_solr.delete_by_id(document_ids, params: { softCommit: true })
+    end
 
+    def cleanup_image_files
       img_id = document_ids[0].gsub(/[[:digit:]]+-/, '')
       path_to_delete = File.join(Rails.root, "/public/uploads/spotlight/featured_image/image/#{img_id}")
       FileUtils.rm_rf(path_to_delete)
