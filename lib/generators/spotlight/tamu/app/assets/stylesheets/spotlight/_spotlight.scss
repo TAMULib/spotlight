@@ -57,6 +57,9 @@ body {
     }
 }
 
-[data-type="resources"] {
-  display: none;
+.blacklight-home_pages-edit,
+.blacklight-feature_pages-edit {
+    [data-type="resources"] {
+        display: none;
+    }
 }
