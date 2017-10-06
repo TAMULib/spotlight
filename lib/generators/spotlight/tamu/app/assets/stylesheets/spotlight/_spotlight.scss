@@ -31,8 +31,11 @@
 @import "spotlight/collapse_toggle";
 @import "tamu/about_contacts";
 
+@import url( 'https://fonts.googleapis.com/css?family=Lato');
+
 body,
 html {
+    min-width: 300px;
     min-height: 100%;
     height: 100vh;
     margin: 0;
