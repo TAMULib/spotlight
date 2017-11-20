@@ -12,7 +12,11 @@ describe Spotlight::BlacklightConfiguration, type: :model do
       config.add_sort_field 'identifier', sort: 'id asc', label: 'Identifier'
     end
     allow(subject).to receive_messages default_blacklight_config: blacklight_config
-    subject.exhibit = FactoryGirl.create(:exhibit)
+    subject.exhibit = FactoryBot.create(:exhibit)
+  end
+
+  it 'is expected to be versioned' do
+    is_expected.to be_versioned
   end
 
   it 'touches the exhibit' do
@@ -336,6 +340,11 @@ describe Spotlight::BlacklightConfiguration, type: :model do
       expect(subject.blacklight_config.sort_fields.select { |_k, v| v.enabled == true }).to include('a', 'c')
       expect(subject.blacklight_config.sort_fields.select { |_k, v| v.enabled == true }).not_to include('b', 'd')
     end
+
+    it 'is disabled when enabled = false' do
+      blacklight_config.add_sort_field 'a', enabled: false
+      expect(subject.blacklight_config.sort_fields['a'].enabled).to eq false
+    end
   end
 
   describe 'search fields' do
@@ -368,6 +377,11 @@ describe Spotlight::BlacklightConfiguration, type: :model do
     it 'respects upstream configuration that disables the field entirely' do
       blacklight_config.add_search_field 'a', if: false
       expect(subject.blacklight_config.search_fields['a'].if).to eq false
+    end
+
+    it 'is disabled when enabled = false' do
+      blacklight_config.add_search_field 'a', enabled: false
+      expect(subject.blacklight_config.search_fields['a'].enabled).to eq false
     end
   end
 
