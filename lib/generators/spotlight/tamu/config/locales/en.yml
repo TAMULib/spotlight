@@ -1,0 +1,42 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  viewers:
+    menu_link: Viewers
+    edit:
+      item_detail:
+        title: Item Detail Page
+        viewer_section_label: Viewer
+        instructions: By default, the Item Detail page displays image resources using SUL-Embed as the viewer. You can change this setting to use a pre-configured version of Mirador as the viewer instead. The Mirador viewer provides minimal options (similar to 'zen mode'), but does include annotation viewing for any IIIF manifests with annotations.
+      iiif_manifest:
+        title: IIIF Manifests
+        alternate_pattern_label: IIIF manifest URL pattern
+        instructions_html: If IIIF manifests for items in this exhibit are to be retrieved using specific URL pattern, enter that pattern below, where the <strong>{id}</strong> token in the pattern represents the unique identifier of a given item.
+        example_url: https://www.example.com/manifest/data/manifests/my-project/{id}/manifest.json
+        help_html: "Enter a URL pattern to indicate where the IIIF manifests for items in this exhibit can be found. Use the token <strong>{id}</strong> in the pattern to represent the item's unique identifier. For example: <br><p class='help-text-row'>%{example_url}</p>"
+      header: Viewers
+      save: Save changes
+    update:
+      notice: The viewer settings have been updated.
+      error: There was a problem updating the viewer settings.

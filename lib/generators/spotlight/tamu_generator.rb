@@ -18,5 +18,9 @@ module Spotlight
     def tinymce_rails
       gem 'tinymce-rails'
     end
+
+    def mirador_rails
+      gem 'mirador_rails'
+    end
   end
 end
