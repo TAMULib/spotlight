@@ -1,5 +1,10 @@
 <% exhibit_specific_manifest = document.exhibit_specific_manifest(@exhibit.required_viewer.custom_manifest_pattern) %>
 
+<h1>Exhibit: <%= @exhibit %></h1>
+<h2>Exhibit Viewer: <%= @exhibit.required_viewer %></h2>
+<h3>Exhibit Viewer Manifest Pattern: <%= @exhibit.required_viewer.custom_manifest_pattern %></h3>
+<h4>Exhibit Manifest: <%= exhibit_specific_manifest %></h4>
+
 <% if exhibit_specific_manifest %>
   <iframe
     src="<%= mirador_index_path(

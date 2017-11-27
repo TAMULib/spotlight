@@ -12,7 +12,7 @@ class Viewer < ApplicationRecord
             allow_nil: true
 
   def to_partial_path
-    return 'oembed_default' if viewer_type == 'sul-embed' || viewer_type.nil?
+    return 'oembed_default' if viewer_type.nil?
     "../viewers/#{viewer_type}"
   end
 end
