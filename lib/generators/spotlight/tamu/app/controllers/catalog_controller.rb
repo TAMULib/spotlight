@@ -5,34 +5,24 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
 
   configure_blacklight do |config|
+    config.show.oembed_field = :oembed_url_ssm
+    config.show.partials.insert(1, :oembed)
 
-    # solr field configuration for search results/index views
-    config.index.title_field = 'title_display'
-    config.index.display_type_field = 'display_type'
-    config.index.default_canvas_thumbnail = 'default-square-thumbnail-annotation.png'
-    config.index.thumbnail_field = :thumbnail_url_ssm
-    config.index.square_image_field = :thumbnail_square_url_ssm
-    config.index.slideshow_field = :large_image_url_ssm
-
-    config.show.title_field = 'title_full_display'
-    config.show.oembed_field = :url_fulltext
-    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
-
-    config.show.partials.insert(1, :viewer)
-    config.show.partials << :metadata_button
-
-    config.view.list.thumbnail_field = :thumbnail_square_url_ssm
-    config.view.list.partials = [:exhibits_document_header, :index]
     config.view.gallery.partials = [:index_header, :index]
-    config.view.gallery.default_canvas_thumbnail = 'default-square-thumbnail-annotation-large.png'
     config.view.masonry.partials = [:index]
     config.view.slideshow.partials = [:index]
+
+    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    #config.show.partials.insert(1, :openseadragon)
+    config.show.partials.insert(1, :viewer)
+
     config.view.embed.partials = [:viewer]
     config.view.embed.if = false
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       qt: 'search',
+      rows: 10,
       fl: '*'
     }
 
