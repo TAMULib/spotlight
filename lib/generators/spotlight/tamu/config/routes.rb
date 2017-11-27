@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root to: 'spotlight/exhibits#index'
   mount Spotlight::Engine, at: 'spotlight'
   mount Blacklight::Engine => '/'
-#  root to: "catalog#index" # replaced by spotlight root path
-    concern :searchable, Blacklight::Routes::Searchable.new
+  #  root to: "catalog#index" # replaced by spotlight root path
+  concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     collection do
       delete 'clear'
     end
+  end
+
+  resources :exhibits, path: '/', only: [] do
+    resource :viewers, only: [:create, :edit, :update]
   end
 
   resources :mirador, only: [:index]
