@@ -6,7 +6,7 @@
 module ManifestConcern
   def manifest
     manifest_url = fetch('iiif_manifest_url_ssi', nil)
-    return if manifest_url.blank? || !manifest_available?
+    return if manifest_url.blank?
     manifest_url
   end
 end
