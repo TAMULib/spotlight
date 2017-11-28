@@ -3,17 +3,14 @@
 <% if manifest %>
   <iframe
     src="<%= mirador_index_path(
-      manifest: manifest,
-      canvas: document.canvas.iiif_id
+      manifest: manifest
     ) %>"
     allowfullscreen="true"
-    class="mirador-embed-wrapper"
+    style="height: 60vh"
     frameborder="0"
     marginwidth="0"
     marginheight="0"
     scrolling="no"
     width="100%"
   ></iframe>
-
-  <%= iiif_drag_n_drop(manifest) %>
 <% end %>
