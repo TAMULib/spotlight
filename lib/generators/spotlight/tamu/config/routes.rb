@@ -29,10 +29,6 @@ Rails.application.routes.draw do
 
   resources :mirador, only: [:index]
 
-  resources :exhibits, path: '/', only: [] do
-    resource :viewers, only: [:create, :edit, :update]
-  end
-
   mount MiradorRails::Engine, at: MiradorRails::Engine.locales_mount_path
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
