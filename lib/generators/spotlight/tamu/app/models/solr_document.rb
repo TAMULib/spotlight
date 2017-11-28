@@ -8,7 +8,6 @@ class SolrDocument
   include Spotlight::SolrDocument::AtomicUpdates
 
   include ManifestConcern
-  include CanvasConcern
 
   # self.unique_key = 'id'
 

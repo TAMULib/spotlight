@@ -4,15 +4,8 @@
 # Model for viewer
 class Viewer < ApplicationRecord
   belongs_to :exhibit, class_name: 'Spotlight::Exhibit'
-  validates :custom_manifest_pattern,
-            format: {
-              with: /{id}/
-            },
-            allow_blank: true,
-            allow_nil: true
 
   def to_partial_path
-    return 'oembed_default' if viewer_type.nil?
-    "../viewers/#{viewer_type}"
+    return '../viewers/mirador'
   end
 end

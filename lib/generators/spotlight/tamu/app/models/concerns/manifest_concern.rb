@@ -10,18 +10,10 @@ module ManifestConcern
     manifest_url
   end
 
-  def exhibit_specific_manifest(custom_manifest_pattern)
-    return manifest if custom_manifest_pattern.blank?
-    # Return early if there is not a manifest pattern (a heuristic for a non-image thing)
-    return manifest if manifest.blank?
-    custom_manifest_pattern.gsub('{id}', first('related_document_id_ssim') || first('id'))
-  end
-
-  VALID_IIIF_CONTENT_TYPES = %w(image manuscript map book).freeze
-
-  # even if a URL is present we need to check the contentMetadata type
-  # to determine whether the manifest will resolve at runtime.
-  def manifest_available?
-    VALID_IIIF_CONTENT_TYPES.include?(first('content_metadata_type_ssm').to_s)
+  def iiif_drag_n_drop(manifest, width: '40px')
+    link_url = format Settings.iiif_dnd_base_url, query: { manifest: manifest }.to_query
+    link_to link_url, class: 'iiif-dnd pull-right', data: { turbolinks: false } do
+      image_tag 'iiif-drag-n-drop.svg', width: width, alt: 'IIIF Drag-n-drop'
+    end
   end
 end
