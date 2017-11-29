@@ -9,6 +9,7 @@ module Spotlight
     def tamu_customizations
       directory 'app', 'app'
       directory 'config', 'config'
+      directory 'db', 'db'
     end
 
     def tinymce_rails
