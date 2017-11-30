@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+##
+# Blacklight controller providing search and discovery features
 class CatalogController < ApplicationController
 
   helper Openseadragon::OpenseadragonHelper
