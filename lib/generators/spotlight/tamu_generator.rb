@@ -9,14 +9,15 @@ module Spotlight
     def tamu_customizations
       directory 'app', 'app'
       directory 'config', 'config'
-    end
-
-    def tamu_assets_precompile
-      append_to_file 'config/initializers/assets.rb', 'Rails.application.config.assets.precompile += %w( *.svg *.png *.ico )'
+      directory 'db', 'db'
     end
 
     def tinymce_rails
       gem 'tinymce-rails'
+    end
+
+    def mirador_rails
+      gem 'mirador_rails'
     end
   end
 end

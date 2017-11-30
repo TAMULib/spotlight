@@ -1,0 +1,17 @@
+<% manifest = document.manifest %>
+
+<% if manifest %>
+  <iframe
+    src="<%= mirador_index_path(
+      manifest: manifest
+    ) %>"
+    allowfullscreen="true"
+    class="col-md-6"
+    style="height: 50vh"
+    frameborder="0"
+    marginwidth="0"
+    marginheight="0"
+    scrolling="no"
+    width="100%"
+  ></iframe>
+<% end %>

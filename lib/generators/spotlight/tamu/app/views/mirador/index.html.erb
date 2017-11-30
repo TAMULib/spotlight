@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "mirador_bundle" %>
+<%= javascript_include_tag "mirador_bundle" %>
+
+<%= mirador_tag(:height => "100%", :options => {
+    "mainMenuSettings": {
+      "show":  false
+    },
+    "buildPath": "/assets/",
+    "saveSession": false,
+    "data": [
+      {
+        "manifestUri": @manifest, "location": "Texas A&M University University"
+      }
+    ],
+    "sidePanelOptions": {
+      "tocTabAvailable": true,
+      "layersTabAvailable": true,
+      "searchTabAvailable": true
+    },
+    "windowObjects": [
+      {
+        "loadedManifest": @manifest,
+        "canvasID": @canvas,
+        "sidePanelVisible": false,
+        "bottomPanelVisible": true,
+        "annotationCreation": false,
+        "canvasControls": {
+          "annotations": {
+            "annotationLayer": true,
+            "annotationState": "on"
+          }
+        }
+      }
+    ]
+}) %>
