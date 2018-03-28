@@ -164,7 +164,7 @@ module Spotlight
           config.facet_fields = Hash[config.facet_fields.sort_by { |k, _v| field_weight(facet_fields, k) }]
 
           config.facet_fields.each do |k, v|
-            v.original = v.dup
+            v.original = v.dup unless v.custom_field
             next if facet_fields[k].blank?
 
             v.merge! facet_fields[k].symbolize_keys
@@ -319,7 +319,14 @@ module Spotlight
       return unless index_fields.blank?
 
       views = default_blacklight_config.view.keys | [:show, :enabled]
-      field.merge! Hash[views.map { |v| [v, true] }]
+      field.merge!((views - field.keys).map { |v| [v, !title_only_by_default?(v)] }.to_h)
+    end
+
+    # Check to see whether config.view.foobar.title_only_by_default is available
+    def title_only_by_default?(view)
+      return false if [:show, :enabled].include?(view)
+      title_only = default_blacklight_config.view.send(:[], view).try(:title_only_by_default)
+      title_only.nil? ? false : title_only
     end
 
     def set_show_field_defaults(field)
