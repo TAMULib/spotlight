@@ -51,8 +51,10 @@ these collections.)
   s.add_dependency 'almond-rails', '~> 0.1'
   s.add_dependency 'sprockets-es6'
   s.add_dependency 'riiif', '~> 1.0'
+  s.add_dependency 'iiif-presentation'
   s.add_dependency 'iiif_manifest'
   s.add_dependency 'leaflet-rails'
+  s.add_dependency 'i18n-active_record'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails', '~> 3.1'
@@ -72,4 +74,5 @@ these collections.)
   s.add_development_dependency 'simplecov', '~> 0.12'
   s.add_development_dependency 'coveralls'
   s.add_development_dependency 'sitemap_generator'
+  s.add_development_dependency 'webmock'
 end
