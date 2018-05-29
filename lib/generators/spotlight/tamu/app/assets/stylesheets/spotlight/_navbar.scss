@@ -18,21 +18,6 @@
     color: white;
 }
 
-.tamu-logo {
-  @if $logo-image {
-    background: transparent $logo-image no-repeat top left !important;
-  }
-  flex: 0 0 48px !important;
-  width: 48px !important;
-}
-
-.tamu-logo-divider {
-    padding: 5px !important;
-    margin: 10px 0px 0px 5px !important;
-    border-left: 1px solid white !important;
-    height: 30px !important;
-}
-
 .navbar-transparent {
     background-color: $navbar-transparent-bg;
     border-color: $navbar-transparent-border;
@@ -82,20 +67,76 @@
     }
 }
 
-/* Header bar at top (Bootstrap nav-bar) */
-.navbar-inverse .navbar-brand {
-    color: $navbar-inverse-link-color;
-}
-
-.navbar-inverse .navbar-brand:hover {
-    color: $navbar-inverse-link-hover-color;
-}
-
 @media (max-width: 768px) {
     .navbar {
         min-height: auto;
     }
     #header-navbar .navbar-brand {
     	padding: 15px 15px;
+    }
+}
+
+header {
+    .navbar-title {
+        margin-left: 15px;
+    }
+    .tamu-header-nav-bar {
+        background-color: #3c0000;
+        margin: 0px;
+    }
+    .tamu-header-nav-bar .navbar-brand {
+        color: $navbar-inverse-link-color;
+    }
+    .tamu-header-nav-bar .navbar-brand:hover {
+        color: $navbar-inverse-link-hover-color;
+    }
+    .navbar-default {
+        border: none;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color:#eee;
+    }
+    .navbar-default .navbar-nav>li>a:hover {
+        color:#fff;
+        background-color:#000;
+        text-decoration: none;
+    }
+    div.tamu-header-title-bar {
+        background-color: #500000;
+        border-top: 1px solid #8d8d8d;
+        border-radius: 0;
+        padding: 20px 0;
+    }
+    .tamu-header-title {
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-variant: normal;
+        color: white;
+    }
+    .tamu-header-title a {
+        color: white;
+        text-decoration: none;
+    }
+    .tamu-header-title a:hover {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .tamu-header-brand {
+        margin-top: 0px;
+    }
+    .tamu-header-brand-text {
+        margin-left: 10px;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-variant: normal;
+        color: white;
+    }
+    @media only screen and (max-width: 767px) {
+        .tamu-header-title {
+            padding-left: 15px;
+        }
     }
 }
