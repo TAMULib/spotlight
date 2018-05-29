@@ -9,13 +9,14 @@
     width: auto;
     background: none;
     text-indent: 0%;
-    padding: 15px 15px 15px 0px;
     margin: auto;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-variant: normal;
     color: white;
+    height: 50px;
+    padding-top: 10px;
 }
 
 .navbar-transparent {
@@ -78,7 +79,10 @@
 
 header {
     .navbar-title {
-        margin-left: 15px;
+        margin-left: 2px;
+    }
+    .navbar-brand>img {
+        display: inline;
     }
     .tamu-header-nav-bar {
         background-color: #3c0000;
