@@ -68,12 +68,12 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .navbar {
         min-height: auto;
     }
     #header-navbar .navbar-brand {
-    	padding: 15px 15px;
+    	padding-left: 15px;
     }
 }
 
