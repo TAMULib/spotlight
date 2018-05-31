@@ -122,25 +122,19 @@ module Spotlight
     protected
 
     # TODO: move this out of app/helpers/blacklight/catalog_helper_behavior.rb and into blacklight/catalog.rb
-    # rubocop:disable Naming/PredicateName
+    # rubocop:disable Style/PredicateName
     def has_search_parameters?
       !params[:q].blank? || !params[:f].blank? || !params[:search_field].blank?
     end
-    # rubocop:enable Naming/PredicateName
+    # rubocop:enable Style/PredicateName
 
     def attach_breadcrumbs
       # The "q: ''" is necessary so that the breadcrumb builder recognizes that a path like this:
       # /exhibits/1?f%5Bgenre_sim%5D%5B%5D=map&q= is not the same as /exhibits/1
       # Otherwise the exhibit breadcrumb won't be a link.
       # see http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-current_page-3F
-      if view_context.current_page?(action: :admin)
-        add_breadcrumb t(:'spotlight.exhibits.breadcrumb', title: @exhibit.title), "http://library.tamu.edu/research/digital_collections"
-        add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
-      else
-        # When not on the admin page, get the translated value for the "Home" breadcrumb
-        add_breadcrumb t(:'spotlight.curation.nav.home', title: @exhibit.title), "http://library.tamu.edu/research/digital_collections"
-        add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
-      end
+      add_breadcrumb "Digital Collections", "http://library.tamu.edu/research/digital_collections"
+      add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
     end
 
     ##
@@ -158,13 +152,13 @@ module Spotlight
 
     def setup_next_and_previous_documents_from_browse_category
       index = search_session['counter'].to_i - 1
-      response, documents = get_previous_and_next_documents_for_search index, current_browse_category.query_params.with_indifferent_access
+      response, _docs = get_previous_and_next_documents_for_search index, current_browse_category.query_params.with_indifferent_access
 
       return unless response
 
       search_session['total'] = response.total
-      @previous_document = documents.first
-      @next_document = documents.last
+      @previous_document = response.documents.first
+      @next_document = response.documents.last
     end
 
     def _prefixes
