@@ -134,11 +134,11 @@ module Spotlight
       # Otherwise the exhibit breadcrumb won't be a link.
       # see http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-current_page-3F
       if view_context.current_page?(action: :admin)
-        add_breadcrumb t(:'spotlight.exhibits.breadcrumb', title: @exhibit.title), exhibit_root_path(@exhibit, q: '')
+        add_breadcrumb t(:'spotlight.exhibits.breadcrumb', title: @exhibit.title), "http://library.tamu.edu/research/digital_collections"
+        add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
       else
         # When not on the admin page, get the translated value for the "Home" breadcrumb
-        # add_breadcrumb t(:'spotlight.curation.nav.home', title: @exhibit.title), exhibit_root_path(@exhibit, q: '')
-        add_breadcrumb "Digital Collections", "http://library.tamu.edu/research/digital_collections"
+        add_breadcrumb t(:'spotlight.curation.nav.home', title: @exhibit.title), "http://library.tamu.edu/research/digital_collections"
         add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
       end
     end
