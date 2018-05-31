@@ -138,8 +138,8 @@ module Spotlight
       else
         # When not on the admin page, get the translated value for the "Home" breadcrumb
         # add_breadcrumb t(:'spotlight.curation.nav.home', title: @exhibit.title), exhibit_root_path(@exhibit, q: '')
-        add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
         add_breadcrumb "Digital Collections", "http://library.tamu.edu/research/digital_collections"
+        add_breadcrumb @exhibit.title, exhibit_root_path(@exhibit, q: '')
       end
     end
 
