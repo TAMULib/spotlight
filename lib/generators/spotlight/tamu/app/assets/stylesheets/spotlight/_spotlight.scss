@@ -88,3 +88,7 @@ input[type="color"]:focus,
     box-shadow: none !important;
     outline: -webkit-focus-ring-color auto 6px !important;
 }
+
+.pagination-search-widgets .search-widgets {
+    display: none;
+}
