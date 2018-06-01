@@ -54,7 +54,9 @@
   <%= render partial: 'shared/masthead' %>
   <%= content_for?(:header_content) ? yield(:header_content) : "" %>
 
-  <%= render partial: 'shared/ajax_modal' %>
+  <h1 style="display: none; margin: auto;">Exhibit</h1>
+
+  <%= render partial: 'shared/modal' %>
 
   <div id="main-container" class="container">
     <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
