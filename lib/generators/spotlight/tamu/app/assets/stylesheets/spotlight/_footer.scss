@@ -21,6 +21,7 @@
         text-align: center;
         min-height: $footer-lower-height;
         background: $footer-lower-background-color;
+        border-top: 1px solid $footer-lower-border-color;
 
         * {
             color: $footer-lower-color;

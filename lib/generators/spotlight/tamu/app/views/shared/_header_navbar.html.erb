@@ -1,21 +1,35 @@
-<div id="header-navbar" class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to "", "http://library.tamu.edu", class: "navbar-brand tamu-logo" %>
-      <%= link_to "", "http://library.tamu.edu", class: "navbar-brand tamu-logo-divider hidden-xs" %>
-      <%= link_to "Texas A&M University Libraries", "http://library.tamu.edu", class: "navbar-brand hidden-xs" %>
-      <%= link_to "Exhibits", main_app.root_path, class: "navbar-brand" %>
-      <% if current_user %> 
+<header>
+  <div id="header-navbar" class="navbar navbar-default navbar-static-top tamu-header-nav-bar" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="http://library.tamu.edu">
+          <span class="navbar-brand tamu-header-brand hidden-xs">
+            <%= image_tag "tamu/tamu-logo-with-bar.png", alt: "Texas A&M University Libraries Logo" %>
+            <span class="navbar-title">Texas A&M University Libraries</span> 
+          </span>
+          <span class="navbar-brand tamu-header-brand visible-xs">
+            <%= image_tag "tamu/tamu-logo.png", alt: "Texas A&M University Libraries Responsive Logo" %>
+          </span>
+        </a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse">
-          <span class="sr-only"><%= t :toggle_nav %></span> 
+          <span class="sr-only"><%= t :toggle_nav %></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <% end %>
-    </div> 
-    <div class="collapse navbar-collapse" id="user-util-collapse">
-      <%= render :partial=>'tamu/user_menu' %>
+      </div>
+      <div class="collapse navbar-collapse" id="user-util-collapse">
+        <%= render :partial=>'tamu/user_menu' %>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="navbar-default tamu-header-title-bar" role="title">
+    <div class="container">
+      <div class="navbar-header tamu-header-title">
+        <%= link_to "Digital Collections", main_app.root_path %>
+      </div>
+    </div>
+  </div>
+
+</header>
