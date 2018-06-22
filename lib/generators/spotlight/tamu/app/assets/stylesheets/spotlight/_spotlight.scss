@@ -101,3 +101,9 @@ input[type="color"]:focus,
     }
   }
   
+.sidenav > li.active > a,
+.sidenav > li.active > h4,
+.sidenav > li > ol.subsection > li.active {
+    color: #500000;
+    font-weight: bold;
+}
