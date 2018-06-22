@@ -100,6 +100,13 @@ input[type="color"]:focus,
         margin-right: 5%;
     }
 }
+  
+.sidenav > li.active > a,
+.sidenav > li.active > h4,
+.sidenav > li > ol.subsection > li.active {
+    color: #500000;
+    font-weight: bold;
+}
 
 .breadcrumb>.active {
     color: #585858;
