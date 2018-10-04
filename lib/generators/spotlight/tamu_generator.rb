@@ -10,6 +10,7 @@ module Spotlight
       directory 'app', 'app'
       directory 'config', 'config'
       directory 'db', 'db'
+      directory 'locales', 'public/locales'
     end
 
     def tinymce_rails
