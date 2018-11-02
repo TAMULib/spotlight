@@ -12,6 +12,8 @@ module Spotlight
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.mirador_url = 'https://labs.library.tamu.edu/mirador?%{query}'
+
     config.to_prepare do
       Spotlight::Exhibit.send(:include, ExhibitExtension)
     end
