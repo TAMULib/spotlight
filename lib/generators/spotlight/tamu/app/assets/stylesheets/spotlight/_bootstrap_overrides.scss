@@ -24,16 +24,24 @@
   }
 }
 
-.document-metadata {
-  @extend .col-xs-8;
-  @extend .col-md-9;
-  @extend .col-xs-offset-3;
-  @extend .col-md-offset-2;
-}
-
-.document-thumbnail {
-  float: none;
-  height: 0;
-  margin: 0;
-  padding: 0;
+#documents {
+  .document {
+    .document-metadata {
+      @extend .col-xs-8;
+      @extend .col-md-9;
+      @extend .col-xs-offset-3;
+      @extend .col-md-offset-2;
+    }
+    
+    .document-thumbnail {
+      float: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
