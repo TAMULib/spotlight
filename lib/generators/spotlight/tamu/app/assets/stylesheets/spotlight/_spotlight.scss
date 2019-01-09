@@ -92,14 +92,6 @@ input[type="color"]:focus,
 .pagination-search-widgets .search-widgets {
     display: none;
 }
-
-@media only screen and (max-width: 767px) {
-    #main-container,
-    .breadcrumbs-container {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
   
 .sidenav > li.active > a,
 .sidenav > li.active > h4,
