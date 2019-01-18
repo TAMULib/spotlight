@@ -1,0 +1,18 @@
+<% doc_presenter = index_presenter(document) %> 
+<%# default partial to display solr document fields in catalog index view -%>
+<div class='col-xs-3 col-md-2'>
+    <%= render_document_partial(document, 'thumbnail', document_counter: document_counter) %>
+</div>
+<div class='col-xs-9 col-md-10'>
+    <%= render_document_partial(document, 'exhibits_index_header', document_counter: document_counter) %>
+    <dl class="document-metadata dl-horizontal dl-invert row">
+        <div class="col-xs-11">
+            <% index_fields(document).each do |field_name, field| -%>
+                <% if should_render_index_field? document, field %>
+                    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_index_field_label document, field: field_name %></dt>
+                    <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field_name %></dd>
+                <% end -%>
+            <% end -%>
+        </div>
+    </dl>
+</div>

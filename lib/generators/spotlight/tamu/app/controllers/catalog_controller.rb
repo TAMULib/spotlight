@@ -12,7 +12,7 @@ class CatalogController < ApplicationController
     config.show.oembed_field = :oembed_url_ssm
     config.show.partials.insert(1, :oembed)
 
-    config.view.gallery.partials = [:index_header, :index]
+    config.view.gallery.partials = [:index_header, :grid_index]
     config.view.masonry.partials = [:index]
     config.view.slideshow.partials = [:index]
 
@@ -22,7 +22,7 @@ class CatalogController < ApplicationController
     config.view.embed.partials = [:viewer]
     config.view.embed.if = false
 
-    config.view.list.partials = [:exhibits_document_header, :index]
+    config.view.list.partials = [:exhibits_index]
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
