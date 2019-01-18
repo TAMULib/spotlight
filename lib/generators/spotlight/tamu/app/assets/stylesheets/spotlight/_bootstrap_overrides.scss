@@ -36,6 +36,14 @@
       }
     }
   }
+  .document-metadata {
+    .grid-metadata-label {
+      color: #a7a7a7
+    }
+    .grid-metadata-value {
+      margin-bottom: 4px;
+    }
+  }
 }
 
 #exhibit-navbar {
@@ -48,6 +56,9 @@
 #document {
   .document {
     margin: 0;
+  }
+  iframe {
+    margin-bottom: 10px;
   }
 }
 
