@@ -22,7 +22,7 @@ class CatalogController < ApplicationController
     config.view.embed.partials = [:viewer]
     config.view.embed.if = false
 
-    config.view.list.partials = [:exhibits_index_header, :exhibits_index]
+    config.view.list.partials = [:exhibits_index]
 
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
