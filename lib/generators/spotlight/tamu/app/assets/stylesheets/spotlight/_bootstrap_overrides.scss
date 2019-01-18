@@ -36,6 +36,10 @@
       }
     }
   }
+  .masonry.document {
+    background-color: transparent;
+    border-bottom: none;
+  }
   .document-metadata {
     .grid-metadata-label {
       color: #a7a7a7
@@ -44,6 +48,10 @@
       margin-bottom: 4px;
     }
   }
+}
+
+#documents.gallery .document {
+  border-bottom: none;
 }
 
 #exhibit-navbar {
