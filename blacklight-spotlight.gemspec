@@ -56,7 +56,7 @@ these collections.)
   s.add_dependency 'leaflet-rails'
   s.add_dependency 'i18n-active_record'
 
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'sqlite3', '~> 1.3'
   s.add_development_dependency 'rspec-rails', '~> 3.1'
   s.add_development_dependency 'rspec-its'
   s.add_development_dependency 'rspec-activemodel-mocks'
