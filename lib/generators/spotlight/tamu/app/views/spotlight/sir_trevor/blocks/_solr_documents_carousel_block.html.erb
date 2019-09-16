@@ -7,7 +7,7 @@
     <div class="carousel-inner">
     <% solr_documents_carousel_block.each_document.each_with_index do |(block_options, document), index| %>
       <% doc_presenter = index_presenter(document) %>
-      <div class="item <%= 'active' if index == 0 %>" data-id="<%= document.id %>">
+      <div class="item custom-item <%= 'active' if index == 0 %>" data-id="<%= document.id %>">
         <% if block_options[:full_image_url].present? %>
           <%= link_to_document(document, image_tag(block_options[:full_image_url], alt: ""), counter: -1) %>
         <% elsif block_options[:iiif_tilesource_base].present?  %>
@@ -15,7 +15,7 @@
         <% elsif has_thumbnail? document %>
           <%= render_thumbnail_tag(document, {}, document_counter: -1) %>
         <% end %>
-        <div class="carousel-caption">
+        <div class="carousel-caption custom-caption">
           <% if solr_documents_carousel_block.primary_caption? %>
             <h3 class="primary">
               <%= doc_presenter.field_value solr_documents_carousel_block.primary_caption_field %>
