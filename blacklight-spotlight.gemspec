@@ -55,6 +55,7 @@ these collections.)
   s.add_dependency 'iiif_manifest'
   s.add_dependency 'leaflet-rails'
   s.add_dependency 'i18n-active_record'
+  s.add_dependency 'github-linguist'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails', '~> 3.1'
@@ -63,7 +64,7 @@ these collections.)
   s.add_development_dependency 'rspec-collection_matchers'
   s.add_development_dependency 'rails-controller-testing'
   s.add_development_dependency 'capybara', '>= 2.5.0'
-  s.add_development_dependency 'rubocop', '~> 0.49.0'
+  s.add_development_dependency 'rubocop', '~> 0.83.0'
   s.add_development_dependency 'rubocop-rspec', '~> 1.15.1'
   s.add_development_dependency 'chromedriver-helper'
   s.add_development_dependency 'selenium-webdriver'
