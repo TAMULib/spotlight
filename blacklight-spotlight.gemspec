@@ -33,6 +33,7 @@ these collections.)
   s.add_dependency 'blacklight-gallery', '>= 0.3.0'
   s.add_dependency 'blacklight-oembed', '>= 0.0.3'
   s.add_dependency 'devise', '~> 4.1'
+  s.add_dependency 'CMake', '~> 3.5.1'
   s.add_dependency 'devise_invitable', '~> 1.6'
   s.add_dependency 'roar', '~> 1.1'
   s.add_dependency 'roar-rails'
